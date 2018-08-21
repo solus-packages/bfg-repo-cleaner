@@ -1,8 +1,8 @@
 name       : bfg-repo-cleaner
-version    : 1.12.16
-release    : 1
+version    : 1.13.0
+release    : 2
 source     :
-    - https://github.com/rtyley/bfg-repo-cleaner/archive/v1.12.16.tar.gz : 658e6368495fc2950d51934392a2431c2e472799da4182a641dc22e6aba330dc
+    - https://github.com/rtyley/bfg-repo-cleaner/archive/v1.13.0.tar.gz : 367885e9f8170904511c9864dbb6fa3b84736e6a3f8337b71ba20f87d00be74e
 license    : GPL-3.0
 component  : programming.tools
 summary    : Removes large or troublesome blobs like git-filter-branch does, but faster
@@ -16,6 +16,6 @@ rundeps    :
 networking : yes
 build      : |
     sbt -Dsbt.global.base=./.sbt/ -Dsbt.ivy.home=./.ivy2/ -Divy.home=./.ivy2/ bfg/assembly
-install    : |
+install    : |-
     install -Dm 00755 $pkgfiles/bfg.sh $installdir/usr/bin/bfg
     install -Dm 00644 bfg/target/bfg-$version-unknown.jar $installdir/usr/share/bfg/bfg.jar
